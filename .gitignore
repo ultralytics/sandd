@@ -5,7 +5,7 @@ __pycache__/
 *$py.class
 
 # PyCharm ignore
-.idea
+.idea/*
 
 # C extensions
 *.so

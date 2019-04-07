@@ -1,4 +1,6 @@
 # pip3 install -U -r requirements.txt
+# IMPORTANT: ROOT must be installed seperately before installing root_numpy
+# https://root.cern.ch/downloading-root
 numpy
 root_numpy
 scipy
