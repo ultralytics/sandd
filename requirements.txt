@@ -1,0 +1,6 @@
+# pip3 install -U -r requirements.txt
+numpy
+root_numpy
+scipy
+torch
+matplotlib
