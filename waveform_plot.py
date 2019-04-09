@@ -8,10 +8,6 @@ import root_numpy
 # os.system('. /Applications/root_v6.16.00/bin/thisroot.sh && pip install -U root_numpy')
 # os.system('source /Applications/root_v6.16.00/bin/thisroot.sh')
 
-source /Applications/root_v6.16.00/bin/thisroot.sh
-sudo pip uninstall root-numpy
-sudo pip install root_numpy
-
 
 plt.rc('font', family='serif')
 

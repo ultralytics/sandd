@@ -2,7 +2,7 @@
 # IMPORTANT: ROOT must be installed seperately before installing root_numpy
 # https://root.cern.ch/downloading-root
 numpy
-root_numpy
+# root_numpy
 scipy
 torch
 matplotlib
