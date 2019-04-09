@@ -4,6 +4,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import root_numpy
 
+# import os
+# os.system('. /Applications/root_v6.16.00/bin/thisroot.sh && pip install -U root_numpy')
+# os.system('source /Applications/root_v6.16.00/bin/thisroot.sh')
+
+source /Applications/root_v6.16.00/bin/thisroot.sh
+sudo pip uninstall root-numpy
+sudo pip install root_numpy
+
+
 plt.rc('font', family='serif')
 
 wlength = 400
@@ -23,7 +32,8 @@ delta2 = 220
 integration_end = total_start + delta2
 plt.axvline(x=total_start * 4, linestyle='--', marker='', color='blue', label=r'$Q_{\mathrm{total}}$ integration start')
 plt.axvline(x=tail_start * 4, linestyle='--', marker='', color='orange', label=r'$Q_{\mathrm{tail}}$ integration start')
-plt.axvline(x=integration_end * 4, linestyle='--', marker='', color='green', label=r'$Q_{\mathrm{total}}$ and $Q_{\mathrm{tail}}$ integration end')
+plt.axvline(x=integration_end * 4, linestyle='--', marker='', color='green',
+            label=r'$Q_{\mathrm{total}}$ and $Q_{\mathrm{tail}}$ integration end')
 
 plt.legend(loc='upper right', numpoints=1)
 # plt.title(filename,fontsize=5)
