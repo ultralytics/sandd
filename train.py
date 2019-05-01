@@ -1,10 +1,12 @@
 import os
 from sys import platform
 
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
 np.set_printoptions(linewidth=320, formatter={'float_kind': '{:11.5g}'.format})  # format short g, %precision=5
+matplotlib.rc('font', **{'size': 8})
 
 path = '/Users/glennjocher/Downloads/SANDD/'
 
@@ -15,12 +17,13 @@ path = '/Users/glennjocher/Downloads/SANDD/'
 # 4. Slava will make a new format with rod_ID
 
 def main():
-    # file = 'background_64rods_noteflon_amps_27V_12hr_0.glenn'  # background
-    file = 'Cs_collimated_oneSource_center_64rods_noteflon_amps_27V_500s_0.glenn'  # Cs (gammas)
-    # file = 'Cf_centered_20inches_from6inchLeadShield_64rods_noteflon_amps_27V_500s_0.glenn'  # Cf (gammas + neutrons)
+    files = ['background_64rods_noteflon_amps_27V_12hr_0.glenn',  # background
+             'Cs_collimated_oneSource_center_64rods_noteflon_amps_27V_500s_0.glenn',  # Cs137 (gammas)
+             'Cf_centered_20inches_from6inchLeadShield_64rods_noteflon_amps_27V_500s_0.glenn']  # Cf (gammas + neutrons)
 
     # Read data
     # timestamp, digitizer_ID, digitizer_channel, SiPM_ID, SiPM_channnel, number_of_samples, V1 V2 V3 .... V400
+    file = files[1]
     with open(path + file, 'r') as f:  # Method 3 (5.5s)
         lines = f.read().split()
     # x = np.array(lines[:406 * 3000], dtype=np.float32).reshape((-1, 406))
@@ -37,43 +40,44 @@ def main():
     ymax = y.max(1, keepdims=True)
     yn = y / ymax
 
-    # Candidate cuts
-    j = (ymax.ravel() < 9000) & (ymax.ravel() > 100)  # & (yn.min(1) > -0.5) & (yn[:, :50].std(1) < 0.1)
-    print('%g/%g (%.1f%%) pass candidate cuts' % (j.sum(), len(y), j.mean() * 100))
+    # Time
+    t0 = waveform_times(y) - 5  # 5 samples before leading edge of each pulse
 
     # Charges
-    s = 100  # start sample
-    q_total = y[j, s + 0: s + 220].sum(1)
-    q_tail = y[j, s + 28: s + 220].sum(1)
+    q_total, q_tail = charges(y, t0)
 
-    # Plot matplotlib
+    # Candidate cuts
+    j = (ymax.ravel() < 9000) & (ymax.ravel() > 100) & (yn.min(1) > -0.5) & (yn[:, :50].std(1) < 0.1) & (q_tail > 0)
+    print('%g/%g (%.1f%%) pass candidate cuts' % (j.sum(), len(y), j.mean() * 100))
+    y, q_total, q_tail = y[j], q_total[j], q_tail[j]
+
+    # Plotting
     log = False
-    fig = plt.figure(figsize=(16, 8))
-    plt.subplot(3, 1, 1)
-    waveform = y[j][:1].T
-    waveform = np.ediff1d(waveform)
-    plt.plot(waveform)
+    fig = plt.figure(figsize=(7, 7))
+    plt.subplot(2, 2, 1)
+    plt.plot(y[:30].T)
     plt.autoscale(axis='both', tight=True)
+    plt.suptitle(file)
 
-    plt.subplot(3, 2, 3)
-    plt.hist(q_total, 100, log=log)
-    plt.title('Q total')
+    plt.subplot(2, 2, 2)
+    n = 100
+    r = q_tail / q_total
+    i = (r > 0.5) & (r < 0.8) & (q_total < 200) & (q_total > 10)
+    cmap = plt.cm.jet
+    cmap.set_under('w', 1)
+    plt.hist2d(q_total[i], r[i], bins=n, range= [[0, 200], [0.5, 0.8]], cmap=cmap, vmin=1)
 
-    plt.subplot(3, 2, 4)
-    plt.hist(q_tail, 100, log=log)
-    plt.title('Q tail')
+    plt.subplot(2, 2, 3)
+    plt.hist(r[i & (q_total > 20)], bins=n, log=log)
+    plt.title('Q_tail / Q_total')
 
-    plt.subplot(3, 2, 5)
-    plt.hist(q_tail / q_total, np.linspace(0.3, .9, 100), log=log)
-    plt.title('Q tail / Q total')
-
-    plt.subplot(3, 2, 6)
-    plt.hist(y[j].sum(1), np.linspace(0, 250000, 100), log=log)
-    plt.title('Q full waveform')
+    plt.subplot(2, 2, 4)
+    plt.hist(q_total[i], bins=n, range=[0, 200], log=log)
+    plt.title('Q_total')
 
     fig.tight_layout()
     fig.savefig('results.png', dpi=300)
-    if platform == 'darwin':  # macos
+    if platform == 'darwin':  # MacOS
         os.system('open results.png')
 
     # Plot.ly
@@ -89,12 +93,26 @@ def main():
 
 
 def waveform_times(waveform):
-    # returns the max derivative sample
-    x = np.ediff1d(waveform).argmax()
+    # Returns the max derivative sample
+    return np.diff(waveform, axis=1).argmax(1)
+
+
+def charges(x, s=100):
+    # Returns Q_total and Q_tail after s (start sample)
+    n = len(s)
+    q_tail, q_total = np.zeros((2, n))
+    for i in range(n):
+        a = x[i, s[i] + 0: s[i] + 220]
+        q_tail[i] = a[28:].sum()
+        q_total[i] = a.sum()
+
+    # q_total = x[:, s + 0: s + 220].sum(1)
+    # q_tail = x[:, s + 28: s + 220].sum(1)
+    return q_total/1000, q_tail/1000
+
+
+def matched_sipms(array_id):
     return None
-
-
-def matched_sipms(array_id, ):
     # 64 to 57
     #
 
