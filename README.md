@@ -5,7 +5,6 @@
 
 This directory is part of the innovative work developed by Ultralytics and **is available for use and redistribution under the AGPL-3.0 license**. For an insightful overview of our diverse projects, we invite you to visit [Ultralytics](https://www.ultralytics.com).
 
-
 # 📜 Description
 
 The [Ultralytics WAVE repository](https://github.com/ultralytics/wave) offers leading-edge **WA**veform **V**ector **E**xploitation code. This novel approach to particle physics detector readout and reconstruction leverages Machine Learning and Deep Neural Networks to enhance data analysis and interpretation.
@@ -17,7 +16,9 @@ To dive into WAVE, ensure you have Python 3.7 or newer. Necessary libraries can 
 ```bash
 pip3 install -U -r requirements.txt
 ```
+
 The essential packages required are:
+
 - `numpy`: For numerical computing.
 - `scipy`: For scientific and technical computing.
 - `torch` (version 0.4.0 or higher): For constructing and training neural networks.
@@ -36,8 +37,7 @@ To execute WAVE models, you have several scripts at your disposal:
 
 Below are example visualizations of waveforms and training processes:
 
-![](https://github.com/ultralytics/wave/blob/master/data/waveforms.png "Waveforms")
-![](https://github.com/ultralytics/wave/blob/master/data/wave.png "Training Progress")
+![](https://github.com/ultralytics/wave/blob/master/data/waveforms.png "Waveforms") ![](https://github.com/ultralytics/wave/blob/master/data/wave.png "Training Progress")
 
 # 📄 Citation
 
@@ -52,6 +52,7 @@ Jocher, G., Nishimura, K., Koblanski, J. and Li, V. (2018). WAVE: Machine Learni
 We welcome contributions from the community! Whether you're fixing bugs, adding new features, or improving documentation, your input is invaluable. Take a look at our [Contributing Guide](https://docs.ultralytics.com/help/contributing) to get started. Also, we'd love to hear about your experience with Ultralytics products. Please consider filling out our [Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey). A huge 🙏 and thank you to all of our contributors!
 
 <!-- Ultralytics contributors -->
+
 <a href="https://github.com/ultralytics/yolov5/graphs/contributors">
 <img width="100%" src="https://github.com/ultralytics/assets/raw/main/im/image-contributors.png" alt="Ultralytics open-source contributors"></a>
 
