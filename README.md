@@ -5,6 +5,8 @@
 
 This directory is part of the innovative work developed by Ultralytics and **is available for use and redistribution under the AGPL-3.0 license**. For an insightful overview of our diverse projects, we invite you to visit [Ultralytics](https://www.ultralytics.com).
 
+[![Ultralytics Actions](https://github.com/ultralytics/sandd/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/sandd/actions/workflows/format.yml)
+
 # 📜 Description
 
 The [Ultralytics WAVE repository](https://github.com/ultralytics/wave) offers leading-edge **WA**veform **V**ector **E**xploitation code. This novel approach to particle physics detector readout and reconstruction leverages Machine Learning and Deep Neural Networks to enhance data analysis and interpretation.
