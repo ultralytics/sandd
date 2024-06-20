@@ -18,6 +18,9 @@ path = "/Users/glennjocher/Downloads/SANDD/"
 
 
 def main():
+    """Process waveform data files to extract and analyze signals, apply cuts, and visualize results using
+    matplotlib.
+    """
     files = [
         "background_64rods_noteflon_amps_27V_12hr_0.glenn",  # background
         "Cs_collimated_oneSource_center_64rods_noteflon_amps_27V_500s_0.glenn",  # Cs137 (gammas)
@@ -96,12 +99,12 @@ def main():
 
 
 def waveform_times(waveform):
-    # Returns the max derivative sample
+    """Returns the index of the sample with the maximum derivative for each waveform in the input array."""
     return np.diff(waveform, axis=1).argmax(1)
 
 
 def charges(x, s=100):
-    # Returns Q_total and Q_tail after s (start sample)
+    """Returns Q_total and Q_tail for each waveform in x, starting from sample s."""
     n = len(s)
     q_tail, q_total = np.zeros((2, n))
     for i in range(n):
@@ -115,6 +118,7 @@ def charges(x, s=100):
 
 
 def matched_sipms(array_id):
+    """Returns None for matched SiPMs, currently not implemented."""
     return None
     # 64 to 57
     #
