@@ -39,7 +39,7 @@ To execute WAVE models, you have several scripts at your disposal:
 
 Below are example visualizations of waveforms and training processes:
 
-![](https://github.com/ultralytics/wave/blob/master/data/waveforms.png "Waveforms") ![](https://github.com/ultralytics/wave/blob/master/data/wave.png "Training Progress")
+![](https://github.com/ultralytics/wave/blob/main/data/waveforms.png "Waveforms") ![](https://github.com/ultralytics/wave/blob/main/data/wave.png "Training Progress")
 
 # 📄 Citation
 
