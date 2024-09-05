@@ -30,7 +30,7 @@ def main():
     # Read data
     # timestamp, digitizer_ID, digitizer_channel, SiPM_ID, SiPM_channnel, number_of_samples, V1 V2 V3 .... V400
     file = files[1]
-    with open(path + file, "r") as f:  # Method 3 (5.5s)
+    with open(path + file) as f:  # Method 3 (5.5s)
         lines = f.read().split()
     # x = np.array(lines[:406 * 3000], dtype=np.float32).reshape((-1, 406))
     x = np.array(lines, dtype=np.float32).reshape((-1, 406))
@@ -54,7 +54,7 @@ def main():
 
     # Candidate cuts
     j = (ymax.ravel() < 9000) & (ymax.ravel() > 100) & (yn.min(1) > -0.5) & (yn[:, :50].std(1) < 0.1) & (q_tail > 0)
-    print("%g/%g (%.1f%%) pass candidate cuts" % (j.sum(), len(y), j.mean() * 100))
+    print(f"{j.sum():g}/{len(y):g} ({j.mean() * 100:.1f}%) pass candidate cuts")
     y, q_total, q_tail = y[j], q_total[j], q_tail[j]
 
     # Plotting
