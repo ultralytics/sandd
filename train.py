@@ -20,7 +20,8 @@ path = "/Users/glennjocher/Downloads/SANDD/"
 
 
 def main():
-    """Process waveform data files to extract and analyze signals, apply cuts, and visualize results using matplotlib.
+    """Process waveform data files to extract and analyze signals, apply cuts, and visualize results using
+    matplotlib.
     """
     files = [
         "background_64rods_noteflon_amps_27V_12hr_0.glenn",  # background
