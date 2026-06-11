@@ -2,7 +2,7 @@
 
 # 🎉 Introduction
 
-Welcome to the Ultralytics WAVE repository! This directory contains innovative code developed by Ultralytics for **WA**veform **V**ector **E**xploitation, focusing on particle physics detector readout and reconstruction. Our work leverages cutting-edge [Machine Learning (ML)](https://www.ultralytics.com/glossary/machine-learning-ml) and [Deep Neural Networks (DNNs)](https://www.ultralytics.com/glossary/deep-learning-dl) to enhance data analysis.
+Welcome to the Ultralytics SANDD repository! This directory contains experimental waveform analysis code developed by Ultralytics for particle physics detector readout and reconstruction. Our work leverages [Machine Learning (ML)](https://www.ultralytics.com/glossary/machine-learning-ml) and scientific Python tooling to enhance data analysis.
 
 This software is available for use and redistribution under the **AGPL-3.0 license**. For a comprehensive overview of our projects and solutions, please visit [Ultralytics](https://www.ultralytics.com/).
 
@@ -13,7 +13,7 @@ This software is available for use and redistribution under the **AGPL-3.0 licen
 
 # 📜 Description
 
-The [Ultralytics WAVE repository](https://github.com/ultralytics/wave) offers a novel approach to particle physics detector readout and reconstruction through **WA**veform **V**ector **E**xploitation. By utilizing advanced ML and DNN techniques, WAVE aims to improve the precision and efficiency of interpreting complex waveform data from Time-Of-Flight detectors, contributing to advancements in [AI research](https://www.ultralytics.com/blog/the-role-of-deep-research-models-in-ai-advancements).
+This repository provides SANDD waveform-processing scripts for local detector data files. `train.py` reads `.glenn` waveform dumps, subtracts pedestals, computes timing and charge features, applies candidate cuts, and writes a `results.png` summary plot. `waveform_plot.py` plots a sample waveform from a ROOT file when [ROOT](https://root.cern/) and `root_numpy` are available.
 
 # 📦 Requirements
 
@@ -27,29 +27,27 @@ Key package requirements include:
 
 - `numpy`: Fundamental package for numerical computation.
 - `scipy`: Used for scientific and technical computing tasks.
-- `torch` (version 0.4.0+): An open-source ML framework for building and training neural networks.
-- `tensorflow` (version 1.8.0+): A comprehensive ecosystem for ML, offering tools, libraries, and community resources.
-- `plotly` (optional): For creating interactive data visualizations.
+- `torch`: An open-source ML framework for building and training neural networks.
+- `matplotlib`: Used for plotting waveform and charge-distribution summaries.
 
-You can find more information about these tools on their respective websites: [NumPy](https://numpy.org/), [SciPy](https://scipy.org/), [PyTorch](https://pytorch.org/), [TensorFlow](https://www.tensorflow.org/), and [Plotly](https://plotly.com/python/).
+The optional `waveform_plot.py` script also requires CERN ROOT and `root_numpy`, as noted in `requirements.txt`. You can find more information about these tools on their respective websites: [NumPy](https://numpy.org/), [SciPy](https://scipy.org/), [PyTorch](https://pytorch.org/), [Matplotlib](https://matplotlib.org/), and [ROOT](https://root.cern/).
 
 # 🚀 Running the Code
 
-Several scripts are available to execute the WAVE models:
+The current repository includes two local scripts:
 
-- **PyTorch Implementation**: Use `wave_pytorch.py` for models developed with the PyTorch framework.
-- **TensorFlow Implementation**: Run `wave_tf.py` for models based on TensorFlow.
-- **PyTorch on Google Cloud Platform**: Deploy `wave_pytorch_gcp.py` for running PyTorch models within the [Google Cloud Platform (GCP)](https://cloud.google.com/) environment.
+- **Waveform Processing**: Run `python train.py` after updating the local `path` variable near the top of the script to point at your SANDD `.glenn` data directory.
+- **Waveform Plotting**: Run `python waveform_plot.py` from a directory containing the expected ROOT input file after installing ROOT and `root_numpy`.
 
 # ✨ Visualizations
 
-Here are some example visualizations showcasing waveforms processed by WAVE and the training progress of the models:
+The related Ultralytics WAVE project includes example waveform and training-progress visualizations:
 
 ![](https://github.com/ultralytics/wave/blob/main/data/waveforms.png "Waveforms") ![](https://github.com/ultralytics/wave/blob/main/data/wave.png "Training Progress")
 
 # 📄 Citation
 
-If you utilize this project in your research or publications, we appreciate it if you cite our work. Please use the following citation format:
+If the related WAVE methodology is useful in your research or publications, we appreciate it if you cite our work using the following format:
 
 ```bibtex
 @misc{jocher2018wave,
@@ -70,18 +68,18 @@ We actively welcome contributions from the open-source community! Whether it's f
 
 We also encourage you to share your experiences with Ultralytics projects by filling out our [Survey](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey). Your feedback helps us improve. A huge 🙏 thank you to all our contributors!
 
-[![Ultralytics open-source contributors](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/ultralytics/graphs/contributors)
+[![Ultralytics open-source contributors](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/sandd/graphs/contributors)
 
 # ©️ License
 
 Ultralytics provides two licensing options to accommodate different use cases:
 
-- **AGPL-3.0 License**: This [OSI-approved](https://opensource.org/license/agpl-v3) open-source license is ideal for students, researchers, and enthusiasts who wish to collaborate and share knowledge openly. See the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file for full details.
+- **AGPL-3.0 License**: This [OSI-approved](https://opensource.org/license/agpl-v3) open-source license is ideal for students, researchers, and enthusiasts who wish to collaborate and share knowledge openly. See the [LICENSE](https://github.com/ultralytics/sandd/blob/main/LICENSE) file for full details.
 - **Enterprise License**: Designed for commercial applications, this license permits the integration of Ultralytics software and AI models into commercial products and services without the open-source requirements of AGPL-3.0. If your project requires an Enterprise License, please contact us through [Ultralytics Licensing](https://www.ultralytics.com/license).
 
 # 📬 Contact Us
 
-For bug reports, feature requests, and contributions, please visit [GitHub Issues](https://github.com/ultralytics/sandd/issues). For broader questions and discussions about WAVE or other Ultralytics projects, join our vibrant community on [Discord](https://discord.com/invite/ultralytics)!
+For bug reports, feature requests, and contributions, please visit [GitHub Issues](https://github.com/ultralytics/sandd/issues). For broader questions and discussions about SANDD or other Ultralytics projects, join our vibrant community on [Discord](https://discord.com/invite/ultralytics)!
 
 <br>
 <div align="center">
