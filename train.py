@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 np.set_printoptions(linewidth=320, formatter={"float_kind": "{:11.5g}".format})  # format short g, %precision=5
-matplotlib.rc("font", **{"size": 8})
+matplotlib.rc("font", size=8)
 
 path = "/Users/glennjocher/Downloads/SANDD/"
 
@@ -119,7 +119,7 @@ def charges(x, s=100):
 
 def matched_sipms(array_id):
     """Returns None for matched SiPMs, currently not implemented."""
-    return None
+    return
     # 64 to 57
     #
 
