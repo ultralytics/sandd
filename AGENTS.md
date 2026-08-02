@@ -31,9 +31,9 @@ After opening a PR:
 ## Commands
 
 ```bash
-pip3 install -U -r requirements.txt  # numpy, scipy, torch, matplotlib
-python train.py                      # waveform processing, writes results.png
-python waveform_plot.py              # single-waveform figure, writes sample_waveform.pdf (needs ROOT + root_numpy)
+pip3 install -U -r requirements.txt # numpy, scipy, torch, matplotlib
+python train.py                     # waveform processing, writes results.png
+python waveform_plot.py             # single-waveform figure, writes sample_waveform.pdf (needs ROOT + root_numpy)
 ```
 
 There is no test suite and no CI beyond `.github/workflows/format.yml` (Ruff, docformatter, Prettier, codespell auto-applied to PR branches) and `cla.yml`.
