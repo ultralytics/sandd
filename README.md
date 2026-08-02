@@ -17,7 +17,7 @@ This repository provides SANDD waveform-processing scripts for local detector da
 
 # 📦 Requirements
 
-To get started with WAVE, you'll need [Python](https://www.python.org/) 3.7 or newer. The necessary libraries can be easily installed using `pip` and the provided `requirements.txt` file:
+To get started with SANDD, you'll need [Python](https://www.python.org/) 3.7 or newer. The necessary libraries can be easily installed using `pip` and the provided `requirements.txt` file:
 
 ```bash
 pip3 install -U -r requirements.txt
