@@ -62,22 +62,22 @@ If the related WAVE methodology is useful in your research or publications, we a
 
 You can access the paper on [ArXiv.org](https://arxiv.org/abs/1811.05875).
 
-# 🤝 Contribute
+## 💡 Contribute
 
 We actively welcome contributions from the open-source community! Whether it's fixing bugs, adding new features, or improving documentation, your help is valuable. Please see our [Contributing Guide](https://docs.ultralytics.com/help/contributing) for more details on how to get started.
 
 We also encourage you to share your experiences with Ultralytics projects by filling out our [Survey](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey). Your feedback helps us improve. A huge 🙏 thank you to all our contributors!
 
-[![Ultralytics open-source contributors](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/sandd/graphs/contributors)
+[![Ultralytics open-source contributors](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/ultralytics/graphs/contributors)
 
-# ©️ License
+## 📄 License
 
 Ultralytics provides two licensing options to accommodate different use cases:
 
 - **AGPL-3.0 License**: This [OSI-approved](https://opensource.org/license/agpl-3.0) open-source license is ideal for students, researchers, and enthusiasts who wish to collaborate and share knowledge openly. See the [LICENSE](https://github.com/ultralytics/sandd/blob/main/LICENSE) file for full details.
 - **Enterprise License**: Designed for commercial applications, this license permits the integration of Ultralytics software and AI models into commercial products and services without the open-source requirements of AGPL-3.0. If your project requires an Enterprise License, please contact us through [Ultralytics Licensing](https://www.ultralytics.com/license).
 
-# 📬 Contact Us
+## 📮 Contact
 
 For bug reports, feature requests, and contributions, please visit [GitHub Issues](https://github.com/ultralytics/sandd/issues). For broader questions and discussions about SANDD or other Ultralytics projects, join our vibrant community on [Discord](https://discord.com/invite/ultralytics)!
 
