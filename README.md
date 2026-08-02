@@ -11,11 +11,11 @@ This software is available for use and redistribution under the **AGPL-3.0 licen
 [![Ultralytics Forums](https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue)](https://community.ultralytics.com/)
 [![Ultralytics Reddit](https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue)](https://reddit.com/r/ultralytics)
 
-# 📜 Description
+## 📜 Description
 
 This repository provides SANDD waveform-processing scripts for local detector data files. `train.py` reads `.glenn` waveform dumps, subtracts pedestals, computes timing and charge features, applies candidate cuts, and writes a `results.png` summary plot. `waveform_plot.py` plots a sample waveform from a ROOT file when [ROOT](https://root.cern/) and `root_numpy` are available.
 
-# 📦 Requirements
+## 📦 Requirements
 
 To get started with SANDD, you'll need [Python](https://www.python.org/) 3.7 or newer. The necessary libraries can be easily installed using `pip` and the provided `requirements.txt` file:
 
@@ -32,20 +32,20 @@ Key package requirements include:
 
 The optional `waveform_plot.py` script also requires CERN ROOT and `root_numpy`, as noted in `requirements.txt`. You can find more information about these tools on their respective websites: [NumPy](https://numpy.org/), [SciPy](https://scipy.org/), [PyTorch](https://pytorch.org/), [Matplotlib](https://matplotlib.org/), and [ROOT](https://root.cern/).
 
-# 🚀 Running the Code
+## 🚀 Running the Code
 
 The current repository includes two local scripts:
 
 - **Waveform Processing**: Run `python train.py` after updating the local `path` variable near the top of the script to point at your SANDD `.glenn` data directory.
 - **Waveform Plotting**: Run `python waveform_plot.py` from a directory containing the expected ROOT input file after installing ROOT and `root_numpy`.
 
-# ✨ Visualizations
+## ✨ Visualizations
 
 The related Ultralytics WAVE project includes example waveform and training-progress visualizations:
 
 ![](https://github.com/ultralytics/wave/blob/main/data/waveforms.png "Waveforms") ![](https://github.com/ultralytics/wave/blob/main/data/wave.png "Training Progress")
 
-# 📄 Citation
+## 📄 Citation
 
 If the related WAVE methodology is useful in your research or publications, we appreciate it if you cite our work using the following format:
 
@@ -62,22 +62,22 @@ If the related WAVE methodology is useful in your research or publications, we a
 
 You can access the paper on [ArXiv.org](https://arxiv.org/abs/1811.05875).
 
-# 🤝 Contribute
+## 💡 Contribute
 
 We actively welcome contributions from the open-source community! Whether it's fixing bugs, adding new features, or improving documentation, your help is valuable. Please see our [Contributing Guide](https://docs.ultralytics.com/help/contributing) for more details on how to get started.
 
 We also encourage you to share your experiences with Ultralytics projects by filling out our [Survey](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey). Your feedback helps us improve. A huge 🙏 thank you to all our contributors!
 
-[![Ultralytics open-source contributors](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/sandd/graphs/contributors)
+[![Ultralytics open-source contributors](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/ultralytics/graphs/contributors)
 
-# ©️ License
+## 📄 License
 
 Ultralytics provides two licensing options to accommodate different use cases:
 
 - **AGPL-3.0 License**: This [OSI-approved](https://opensource.org/license/agpl-3.0) open-source license is ideal for students, researchers, and enthusiasts who wish to collaborate and share knowledge openly. See the [LICENSE](https://github.com/ultralytics/sandd/blob/main/LICENSE) file for full details.
 - **Enterprise License**: Designed for commercial applications, this license permits the integration of Ultralytics software and AI models into commercial products and services without the open-source requirements of AGPL-3.0. If your project requires an Enterprise License, please contact us through [Ultralytics Licensing](https://www.ultralytics.com/license).
 
-# 📬 Contact Us
+## 📮 Contact
 
 For bug reports, feature requests, and contributions, please visit [GitHub Issues](https://github.com/ultralytics/sandd/issues). For broader questions and discussions about SANDD or other Ultralytics projects, join our vibrant community on [Discord](https://discord.com/invite/ultralytics)!
 
