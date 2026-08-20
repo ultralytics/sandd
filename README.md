@@ -1,15 +1,15 @@
-<a href="https://www.ultralytics.com/"><img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Original.svg" width="320" alt="Ultralytics logo"></a>
+<a href="https://www.ultralytics.com"><img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Original.svg" width="320" alt="Ultralytics logo"></a>
 
 # 🎉 Introduction
 
 Welcome to the Ultralytics SANDD repository! This directory contains experimental waveform analysis code developed by Ultralytics for particle physics detector readout and reconstruction. Our work leverages [Machine Learning (ML)](https://www.ultralytics.com/glossary/machine-learning-ml) and scientific Python tooling to enhance data analysis.
 
-This software is available for use and redistribution under the **AGPL-3.0 license**. For a comprehensive overview of our projects and solutions, please visit [Ultralytics](https://www.ultralytics.com/).
+This software is available for use and redistribution under the **AGPL-3.0 license**. For a comprehensive overview of our projects and solutions, please visit [Ultralytics](https://www.ultralytics.com).
 
 [![Ultralytics Actions](https://github.com/ultralytics/sandd/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/sandd/actions/workflows/format.yml)
 [![Ultralytics Discord](https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue)](https://discord.com/invite/ultralytics)
-[![Ultralytics Forums](https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue)](https://community.ultralytics.com/)
-[![Ultralytics Reddit](https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue)](https://reddit.com/r/ultralytics)
+[![Ultralytics Forums](https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue)](https://community.ultralytics.com)
+[![Ultralytics Reddit](https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue)](https://www.reddit.com/r/Ultralytics/)
 
 ## 📜 Description
 
